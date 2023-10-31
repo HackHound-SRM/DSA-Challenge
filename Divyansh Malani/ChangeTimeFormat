@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int hours, minutes;
+    char am_pm;
+
+    scanf("%d:%d %c", &hours, &minutes, &am_pm);
+
+    if (am_pm == 'P' || am_pm == 'p') {
+        hours = (hours != 12) ? hours + 12 : 12;
+    } else if (am_pm == 'A' || am_pm == 'a') {
+        hours = (hours == 12) ? 0 : hours;
+    }
+
+    printf("%02d%02d hrs\n", hours, minutes);
+
+    return 0;
+}
